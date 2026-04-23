@@ -19,7 +19,7 @@
 
 ## 📑 Περιεχόμενα
 
-- [Γεννήτρια Προβλημάτων](#flpgenerator_BoxNow.py)
+- [Γεννήτρια προβλημάτων (flpgenerator.py)](#γεννήτρια-προβλημάτων-flpgeneratorpy)
 - [Μοντελοποίηση Προβλήματος (MILP)](#μοντελοποίηση-προβλήματος-milp)
 - [Μοντέλο για Branch & Bound](#μοντέλο-για-branch--bound)
 - [Branch & Bound Αλγόριθμοι](#branch--bound-αλγόριθμοι)
