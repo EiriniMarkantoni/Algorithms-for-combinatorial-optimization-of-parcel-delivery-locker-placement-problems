@@ -1,5 +1,4 @@
 # Algorithms-for-combinatorial-optimization-of-parcel-delivery-locker-placement-problems
-Πακέτο Αναπαραγωγής Πειραμάτων<br>
 
 Θέμα: Αλγόριθμοι Συνδυαστικής Βελτιστοποίησης για Προβλήματα Χωροθέτησης Θυρίδων Παράδοσης Δεμάτων<br>
 Συγγραφέας: Ειρήνη Μαρκαντώνη<br>
