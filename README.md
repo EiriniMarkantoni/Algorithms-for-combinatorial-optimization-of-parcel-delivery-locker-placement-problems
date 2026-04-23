@@ -383,8 +383,6 @@ print("Objective value:", model.objVal)
 
 Ο αλγόριθμος συνεργάζεται με το μοντέλο του Gurobi και εφαρμόζει διακλάδωση σε κλασματικές μεταβλητές μέχρι να εντοπιστεί βέλτιστη ακέραια λύση.
 
-:contentReference[oaicite:0]{index=0}
-
 ---
 
 ### 🔧 Χαρακτηριστικά αλγορίθμου
@@ -393,7 +391,7 @@ print("Objective value:", model.objVal)
   - Depth-First Search (DFS) με χρήση στοίβας (stack)
 
 - **Κανόνας διακλάδωσης:**
-  - First Fractional Variable
+  - First Fractional Variable - επιλέγεται η πρώτη μη ακέραια μεταβλητή
 
 - **Bounding (κλάδεμα):**
   - Χρήση άνω και κάτω φραγμάτων (upper/lower bounds)
@@ -402,7 +400,7 @@ print("Objective value:", model.objVal)
   - Χρήση simplex βάσεων (VBasis / CBasis) από γονικούς κόμβους
 
 - **Χρονικός περιορισμός:**
-  - Μέγιστος χρόνος εκτέλεσης (π.χ. 1 ώρα)
+  - Μέγιστος χρόνος εκτέλεσης 1 ώρα
 
 ---
 
