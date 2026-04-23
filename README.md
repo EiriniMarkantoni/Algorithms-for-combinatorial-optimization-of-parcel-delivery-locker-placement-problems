@@ -362,3 +362,13 @@ python model.py problems/class_1 --problems 0.txt 1.txt
 from model_for_bnb import run_model
 
 model, ub, lb, integer_var, num_vars, *rest = run_model("data/problem1.txt")
+
+### 📌 Παράδειγμα
+```bash
+from model_for_bnb import run_model
+
+model, ub, lb, integer_var, num_vars, N, E, CL, P, *rest = run_model("problems/class_1/0.txt")
+
+model.optimize()
+print("Objective value:", model.objVal) 
+```
