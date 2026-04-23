@@ -120,4 +120,11 @@ python flpgenerator_BoxNow.py <grid_size> <total_points> <clients> <facilities> 
 ```bash
 python flpgenerator_BoxNow.py 5 25 10 5 2
 ```
+Δημιουργεί 5 προβλήματα σε φάκελο:
+
+10_100_30_10/
+
+με αρχεία:
+
+0.txt, 1.txt, ..., 4.txt
 
