@@ -113,3 +113,8 @@
 
 ```bash
 python flpgenerator_BoxNow.py <grid_size> <total_points> <clients> <facilities> <num_problems>
+
+### 📌 Παράδειγμα
+
+```bash
+python flpgenerator_BoxNow.py 10 100 30 10 5
