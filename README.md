@@ -22,9 +22,8 @@
 - [Γεννήτρια προβλημάτων (flpgenerator.py)](#γεννήτρια-προβλημάτων-flpgeneratorpy)
 - [Μοντέλο Βελτιστοποίησης (model.py)](#-μοντέλο-βελτιστοποίησης-modelpy)
 - [Μοντέλο για Branch & Bound (model_for_bnb.py)](#μοντέλο-για-branch--bound)
-- [Branch & Bound Αλγόριθμοι](#branch--bound-αλγόριθμοι)
-  - [Baseline Branch & Bound](#baseline-branch--bound)
-  - [Βελτιωμένος Branch & Bound](#βελτιωμένος-branch--bound)
+- [Baseline Branch & Bound (simple_bnb.py)](#baseline-branch--bound)
+- [Βελτιωμένος Branch & Bound](#βελτιωμένος-branch--bound)
 - [Ευρετικοί & Μεθευρετικοί Αλγόριθμοι](#ευρετικοί--μεθευρετικοί-αλγόριθμοι)
 
 Όλοι οι αλγόριθμοι συνοδεύονται από αναλυτική περιγραφή, απαιτήσεις εκτέλεσης και παραδείγματα χρήσης, επιτρέποντας την πλήρη αναπαραγωγή των πειραμάτων της εργασίας.
