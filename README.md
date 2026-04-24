@@ -228,10 +228,10 @@ pip install gurobipy numpy
 
 ### ▶️ Εκτέλεση
 
-Επίλυση όλων των προβλημάτων σε φάκελο:
+Η χρήση γίνεται από γραμμή εντολών, με βασική δομή:
 
 ```bash
-python model.py <directory>
+python model.py <directory> --problems <problem_files>
 ```
 
 Αν δεν δοθούν συγκεκριμένα προβλήματα, ο κώδικας επιλύει όλα τα αρχεία του φακέλου.
@@ -241,7 +241,7 @@ python model.py <directory>
 ### 📌 Παράδειγμα
 
 ```bash
-python model.py problems/class_1
+> python model.py ./4_16_6_3/ --problems 0.txt
 ```
 
 ---
