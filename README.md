@@ -238,7 +238,7 @@ python model.py <directory> --problems <problem_files>
 
 ---
 
-### 📌 Παράδειγμα
+### 📌 Παράδειγμα εκτέλεσης συγκεκριμένων προβλημάτων
 
 ```bash
 > python model.py ./4_16_6_3/ --problems 0.txt
@@ -246,27 +246,7 @@ python model.py <directory> --problems <problem_files>
 
 ---
 
-### ▶️ Εκτέλεση συγκεκριμένων προβλημάτων
 
-```bash
-python model.py problems/class_1 --problems 0.txt 1.txt
-```
-
----
-
-### 📊 Παραγόμενα αποτελέσματα
-
-- Αναλυτικά αποτελέσματα για κάθε instance  
-- Μέσος χρόνος επίλυσης  
-- Μέση τιμή αντικειμενικής συνάρτησης  
-- Κατηγοριοποίηση προβλημάτων:
-  - Feasible  
-  - Infeasible  
-  - Aborted  
-
-Τα αποτελέσματα αποθηκεύονται σε αρχεία `.txt` για περαιτέρω ανάλυση.
-
----
 
 ### 🎯 Σημείωση
 
