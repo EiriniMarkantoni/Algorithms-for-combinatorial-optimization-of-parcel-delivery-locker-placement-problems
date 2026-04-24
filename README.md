@@ -228,20 +228,25 @@ pip install gurobipy numpy
 
 ### ▶️ Εκτέλεση
 
-Η χρήση γίνεται από γραμμή εντολών, με βασική δομή:
+Η χρήση γίνεται από γραμμή εντολών με την ακόλουθη μορφή:
 
 ```bash
-python model.py <directory> --problems <problem_files>
+python model.py <directory> [--problems problem1.txt problem2.txt ...]
 ```
-
 Αν δεν δοθούν συγκεκριμένα προβλήματα, ο κώδικας επιλύει όλα τα αρχεία του φακέλου.
 
 ---
 
+### 📌 Παράδειγμα εκτέλεσης όλων των προβλημάτων
+
+```bash
+> python model.py ./4_16_6_3/
+```
+
 ### 📌 Παράδειγμα εκτέλεσης συγκεκριμένων προβλημάτων
 
 ```bash
-> python model.py ./4_16_6_3/ --problems 0.txt
+> python model.py ./4_16_6_3/ --problems 0.txt 1.txt
 ```
 
 ---
