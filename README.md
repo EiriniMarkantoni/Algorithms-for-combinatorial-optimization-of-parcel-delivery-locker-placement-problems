@@ -94,7 +94,12 @@
 
 ```bash
 <grid_size>_<total_points>_<clients>_<facilities_to_open>/
+```
+### 📌 Παράδειγμα
 
+```bash
+5_25_10_5/
+```
 ---
 
 ## Απαιτήσεις
