@@ -759,7 +759,7 @@ pressure = demand - capacity
 ```
 - Προτεραιότητα μεταβλητών
    - x[i,j] (άνοιγμα εγκαταστάσεων)
-   -y[k,i] (αναθέσεις πελατών)
+   - y[k,i] (αναθέσεις πελατών)
 
 - Φάσεις αναζήτησης
 ```bash
@@ -944,5 +944,66 @@ Average Nodes: 376
 
 ---
 
+### Flow του `improved_bnb.py`
+```text
+1. Φόρτωση instance (.txt)
+        ↓
+2. Δημιουργία μοντέλου από το model_for_bnb.py
+        ↓
+3. Προεπεξεργασία δεδομένων
+   - υπολογισμός εφικτών αναθέσεων
+   - pruning μη εφικτών y μεταβλητών
+   - υπολογισμός branching metrics
+        ↓
+4. Εκτέλεση heuristics
+   - Distance Greedy
+   - Cost-Aware Greedy
+   - Feasibility-First
+   - GRASP
+        ↓
+5. Βελτίωση λύσης με metaheuristics
+   - VND
+   - Simulated Annealing
+   - ILS
+        ↓
+6. Αρχικοποίηση incumbent / upper bound
+        ↓
+7. Εκτέλεση Improved Branch and Bound
+   - LP relaxation
+   - intelligent branching
+   - constraint propagation
+   - pruning
+   - warm start
+        ↓
+8. Υβριδική εξερεύνηση κόμβων
+   - DFS diving για γρήγορη λύση
+   - Best-first για καλύτερη βελτιστοποίηση
+        ↓
+9. Ενημέρωση καλύτερης λύσης
+        ↓
+10. Αποθήκευση αποτελεσμάτων
+```
+---
+### Περιγραφή Flow
+```bash
+| Βήμα                  | Περιγραφή                                             |
+| --------------------- | ----------------------------------------------------- |
+| Φόρτωση instance      | Διαβάζεται το αρχείο προβλήματος `.txt`               |
+| Δημιουργία μοντέλου   | Το `model_for_bnb.py` δημιουργεί το LP relaxation     |
+| Προεπεξεργασία        | Μειώνεται ο χώρος αναζήτησης πριν το B&B              |
+| Heuristics            | Βρίσκεται γρήγορη αρχική εφικτή λύση                  |
+| Metaheuristics        | Βελτιώνεται η αρχική λύση                             |
+| Incumbent             | Η καλύτερη λύση γίνεται αρχικό upper bound            |
+| Improved B&B          | Ξεκινά η συστηματική αναζήτηση                        |
+| Intelligent branching | Επιλέγεται “έξυπνα” η μεταβλητή διακλάδωσης           |
+| Pruning               | Κόβονται κόμβοι που δεν μπορούν να βελτιώσουν τη λύση |
+| Αποτελέσματα          | Αποθηκεύονται objective, χρόνος, κόμβοι και gap       |
+```
+---
+### Συνολικά
+Heuristics → καλή αρχική λύση
+Metaheuristics → καλύτερη λύση
+Improved B&B → συστηματική βελτιστοποίηση
+Metrics → καθοδήγηση branching και pruning
 
-
+---
