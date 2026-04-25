@@ -374,14 +374,13 @@ model, ub, lb, integer_var, num_vars, N, E, CL, P, cl_sp_distances, transport_mo
 
 Για την εκτέλεση απαιτούνται:
 
-- Python 3.x  
+- Python 3.x
+- Gurobi Optimizer (https://www.gurobi.com/)
+- Ενεργή άδεια Gurobi
 
 **Εγκατεστημένα πακέτα:**
 - `gurobipy` – solver optimization  
 - `numpy` – αριθμητικοί υπολογισμοί  
-
-**Ενσωματωμένα πακέτα:**
-- `os` – διαχείριση αρχείων  
 
 ---
 
@@ -389,24 +388,16 @@ model, ub, lb, integer_var, num_vars, N, E, CL, P, cl_sp_distances, transport_mo
 
 Το αρχείο **δεν εκτελείται αυτόνομα**, αλλά χρησιμοποιείται ως module από άλλους αλγορίθμους (π.χ. Branch & Bound).
 
-Βασική χρήση:
+Παράδειγμα χρήσης:
 
 ```python
 from model_for_bnb import run_model
 
-model, ub, lb, integer_var, num_vars, *rest = run_model("data/problem1.txt")
+filename = "./4_16_6_3/0.txt"
+
+model, ub, lb, integer_var, num_vars, N, E, CL, P, cl_sp_distances, transport_mode, emission_values, cost_types, facility_types, Cmax, capacities, demand, get_max_distance, combined_cost_per_km = run_model(filename)
 ```
 
-### 📌 Παράδειγμα
-
-```python
-from model_for_bnb import run_model
-
-model, ub, lb, integer_var, num_vars, N, E, CL, P, *rest = run_model("problems/class_1/0.txt")
-
-model.optimize()
-print("Objective value:", model.objVal)
-```
 ---
 ### 🎯 Σημείωση
 Το model_for_bnb.py δεν εκτελεί πλήρη επίλυση του προβλήματος.
@@ -414,6 +405,14 @@ print("Objective value:", model.objVal)
 - δημιουργεί το LP μοντέλο
 - επιστρέφει όλες τις απαραίτητες δομές
 - χρησιμοποιείται ως είσοδος σε custom αλγόριθμο Branch and Bound
+
+Επίσης, οι μεταβλητές είναι
+```python
+vtype = GRB.CONTINUOUS
+```
+και όχι binary, γιατί:
+- Η ακεραιότητα επιβάλλεται από τον custom Branch and Bound
+- Το integer_var δείχνει ποιες μεταβλητές πρέπει να είναι ακέραιες
 
 ---
 ## 🌳 Baseline Branch & Bound (`simple_bnb.py`)
