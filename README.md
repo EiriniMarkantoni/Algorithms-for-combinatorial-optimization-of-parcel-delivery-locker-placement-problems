@@ -656,8 +656,8 @@ simple_bnb.py
 ### 🎯 Ρόλος στην εργασία
 Ο simple_bnb.py χρησιμοποιείται ως βασική υλοποίηση Branch and Bound. Τα αποτελέσματά του μπορούν να συγκριθούν με:
 
-= λύσεις του Gurobi,
--βελτιωμένες εκδόσεις Branch and Bound,
+- λύσεις του Gurobi,
+- βελτιωμένες εκδόσεις Branch and Bound,
 - heuristics,
 - metaheuristics.
 
