@@ -339,9 +339,8 @@ objective → N * E + CL * N
 ```python
 run_model(filename)
 ```
-```text
 δέχεται ως είσοδο ένα αρχείο .txt που έχει παραχθεί από τον generator (flpgenerator_BoxNow.py)
-```
+
 ---
 ## 💾 Έξοδος
 Η συνάρτηση run_model(filename) δεν επιστρέφει μόνο το μοντέλο, αλλά ένα σύνολο δομών που χρησιμοποιούνται από τον Branch and Bound:
@@ -406,7 +405,7 @@ model, ub, lb, integer_var, num_vars, N, E, CL, P, cl_sp_distances, transport_mo
 - επιστρέφει όλες τις απαραίτητες δομές
 - χρησιμοποιείται ως είσοδος σε custom αλγόριθμο Branch and Bound
 
-Επίσης, οι μεταβλητές είναι
+Επίσης, οι μεταβλητές είναι:
 ```python
 vtype = GRB.CONTINUOUS
 ```
