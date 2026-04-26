@@ -21,10 +21,10 @@
 ## 📑 Περιεχόμενα
 
 - [Γεννήτρια Προβλημάτων (`flpgenerator_BoxNow.py`)](#-γεννήτρια-προβλημάτων-flpgenerator_boxnowpy)
-- [Μοντέλο Βελτιστοποίησης (model.py)](#-μοντέλο-βελτιστοποίησης-modelpy)
-- [Μοντέλο για Branch & Bound (model_for_bnb.py)](#μοντέλο-για-branch--bound)
-- [Baseline Branch & Bound (simple_bnb.py)](#baseline-branch--bound)
-- [Βελτιωμένος Branch & Bound (improved_bnb.py)](#βελτιωμένος-branch--bound)
+- [Μοντέλο Βελτιστοποίησης (`model.py`)](#-μοντέλο-βελτιστοποίησης-modelpy)
+- [Μοντέλο για Branch & Bound (`model_for_bnb.py`)](#-μοντέλο-για-branch--bound-model_for_bnbpy)
+- [Baseline Branch & Bound (`simple_bnb.py`)](#-baseline-branch--bound-simple_bnbpy)
+- [Βελτιωμένος Branch & Bound (`improved_bnb.py`)](#-βελτιωμένος-branch--bound-improved_bnbpy)
 
 Όλοι οι αλγόριθμοι συνοδεύονται από αναλυτική περιγραφή, απαιτήσεις εκτέλεσης και παραδείγματα χρήσης, επιτρέποντας την πλήρη αναπαραγωγή των πειραμάτων της εργασίας.
 
@@ -935,7 +935,7 @@ python improved_bnb.py
 
 ### 🔹 Συγκεντρωτικά αποτελέσματα
 
-Μετά την επίλυση όλων του προβλημάτος υπολογίζονται:
+Μετά την επίλυση όλων των instances του προβλήματος υπολογίζονται:
 
 - **Average Objective Value**
 - **Average Time**
