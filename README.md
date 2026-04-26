@@ -756,7 +756,7 @@ Average Time Elapsed: ... seconds
 | Site Scarcity    | Σημαντικότητα θέσης          |
 
 
-**Capacity Pressure**:
+**Capacity Pressure**:<br>
 pressure = demand - capacity
 
  Χρησιμοποιείται για:
