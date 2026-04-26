@@ -937,12 +937,12 @@ python improved_bnb.py
 
 Μετά την επίλυση όλων των instances του προβλήματος υπολογίζονται:
 
-- **Average Objective Value**
-- **Average Time**
-- **Average Nodes Explored**
-- **Average GAP (%)**
-- **Feasible Problems (%)**
-- **Infeasible / Aborted Problems (%)**
+- Average Objective Value
+- Average Time
+- Average Nodes Explored
+- Average GAP (%)
+- Feasible Problems (%)
+- Infeasible / Aborted Problems (%)
 
 
 
@@ -1031,6 +1031,6 @@ Average Nodes: 376
 - Improved B&B → συστηματική βελτιστοποίηση
 - Metrics → καθοδήγηση branching και pruning
 
-  ---
+
 
 ---
