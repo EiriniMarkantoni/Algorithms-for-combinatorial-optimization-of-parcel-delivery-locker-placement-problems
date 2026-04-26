@@ -746,7 +746,7 @@ Average Time Elapsed: ... seconds
 | Customer Scarcity | Πόσες επιλογές έχει ο πελάτης |
 | Demand            | Ζήτηση πελάτη                 |
 
-- Μετρικές θέσεων:
+**Μετρικές θέσεων**:
 
 | Metric           | Περιγραφή                    |
 | ---------------- | ---------------------------- |
@@ -756,7 +756,7 @@ Average Time Elapsed: ... seconds
 | Site Scarcity    | Σημαντικότητα θέσης          |
 
 
-- Capacity Pressure:
+**Capacity Pressure**:
 pressure = demand - capacity
 
  Χρησιμοποιείται για:
