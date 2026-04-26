@@ -753,7 +753,7 @@ Average Time Elapsed: ... seconds
 | Feasible Count   | Πόσοι πελάτες εξυπηρετούνται |
 | Feasible Demand  | Συνολική ζήτηση              |
 | Inverse Distance | Κοντινή ζήτηση               |
-| Site Scarcity    | Σημαντικότητα θέσης          |
+| Site Scarcity | Πόσο κρίσιμη είναι μια θέση για την κάλυψη πελατών με περιορισμένες επιλογές |
 
 
 **Capacity Pressure**:<br>
@@ -772,7 +772,7 @@ pressure = demand - capacity
 | Fractionality     | Πόσο “μη ακέραιη” είναι   |
 | Capacity pressure | Έλλειμμα χωρητικότητας    |
 | Customer scarcity | Πελάτες με λίγες επιλογές |
-| Site importance   | Σημαντικότητα θέσης       |
+| Site importance   | Σημαντικότητα θέσης (πόσο κρίσιμη είναι μια θέση για την κάλυψη πελατών με περιορισμένες επιλογές)      |
 
 
 - Προτεραιότητα μεταβλητών
@@ -919,7 +919,7 @@ python improved_bnb.py
 ###  Για κάθε instance καταγράφονται:
 
 - **Objective Value**  
-  Τιμή αντικειμενικής συνάρτησης (συνολικό κόστος/απόσταση)
+  Τιμή αντικειμενικής συνάρτησης (συνολική απόσταση)
 
 - **Best Solution (Incumbent)**  
   Η καλύτερη εφικτή λύση που βρέθηκε
