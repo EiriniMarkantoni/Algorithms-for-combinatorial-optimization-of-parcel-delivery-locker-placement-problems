@@ -716,7 +716,7 @@ Average Time Elapsed: ... seconds
 - ταχεία εύρεση λύσης
 - σημαντική μείωση search space
 
-## 2. Μεθευρετικές Μέθοδοι (Metaheuristics)
+## 2. Μεθευρετικοί Αλγόριθμοι (Metaheuristics)
 Μετά τους heuristics, εφαρμόζονται metaheuristics για βελτίωση της λύσης.
 
 | Μέθοδος               | Περιγραφή                             | Πλεονέκτημα             |
