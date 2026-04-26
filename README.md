@@ -95,7 +95,7 @@
 ```bash
 <grid_size>_<total_points>_<clients>_<facilities_to_open>/
 ```
-### Παράδειγμα
+## Παράδειγμα
 
 ```bash
 5_25_10_5/
@@ -115,7 +115,7 @@
 
 - Python 3.x  
 
-### Εγκατεστημένα πακέτα:
+## Εγκατεστημένα πακέτα:
 - `numpy` – για αριθμητικούς υπολογισμούς και πίνακες  
 
 ### Ενσωματωμένα πακέτα Python:
@@ -128,7 +128,7 @@
 pip install numpy
 ```
 
-### Εκτέλεση
+## Εκτέλεση
 
 Η χρήση γίνεται από γραμμή εντολών:
 
@@ -136,7 +136,7 @@ pip install numpy
 python flpgenerator_BoxNow.py <grid_size> <total_points> <clients> <facilities> <num_problems>
 ```
 
-###  Παράδειγμα εκτέλεσης
+##  Παράδειγμα εκτέλεσης
 
 ```bash
 python flpgenerator_BoxNow.py 5 25 10 5 2
