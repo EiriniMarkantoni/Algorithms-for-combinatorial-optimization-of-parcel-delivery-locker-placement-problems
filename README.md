@@ -21,7 +21,7 @@
 ## 📑 Περιεχόμενα
 
 - [Γεννήτρια Προβλημάτων (`flpgenerator_BoxNow.py`)](#-γεννήτρια-προβλημάτων-flpgenerator_boxnowpy)
-- [Μοντέλο Βελτιστοποίησης (`model.py`)](#-μοντέλο-βελτιστοποίησης-modelpy)
+- [Μοντέλο Βελτιστοποίησης (`model.py`)](#model)
 - [Μοντέλο για Branch & Bound (`model_for_bnb.py`)](#-μοντέλο-για-branch--bound-model_for_bnbpy)
 - [Baseline Branch & Bound (`simple_bnb.py`)](#-baseline-branch--bound-simple_bnbpy)
 - [Βελτιωμένος Branch & Bound (`improved_bnb.py`)](#-βελτιωμένος-branch--bound-improved_bnbpy)
@@ -141,7 +141,7 @@ python flpgenerator_BoxNow.py <grid_size> <total_points> <clients> <facilities> 
 ```bash
 python flpgenerator_BoxNow.py 5 25 10 5 2
 ```
-
+<a id="model"></a>
 ## ⚙️ Μοντέλο Βελτιστοποίησης (`model.py`)
 
 Ο παρών κώδικας υλοποιεί ένα **Mixed Integer Linear Programming (MILP)** μοντέλο για το πρόβλημα χωροθέτησης ετερογενών θυρίδων παράδοσης δεμάτων (*parcel lockers*). Το μοντέλο αποτελεί επέκταση του προβλήματος **capacitated p-median**, καθώς λαμβάνει υπόψη διαφορετικούς τύπους εγκαταστάσεων, περιορισμούς χωρητικότητας, ζήτησης, προσβασιμότητας και προϋπολογισμού.
