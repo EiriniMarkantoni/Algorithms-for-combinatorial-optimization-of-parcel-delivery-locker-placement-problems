@@ -19,15 +19,15 @@
 
 
 ## Περιεχόμενα
-
-- [Γεννήτρια Προβλημάτων (`flpgenerator_BoxNow.py`)](#-γεννήτρια-προβλημάτων-flpgenerator_boxnowpy)
+- [Γεννήτρια Προβλημάτων (`flpgenerator_BoxNow.py`)](#generator)
 - [Μοντέλο Βελτιστοποίησης (`model.py`)](#model)
-- [Μοντέλο για Branch & Bound (`model_for_bnb.py`)](#-μοντέλο-για-branch--bound-model_for_bnbpy)
-- [Baseline Branch & Bound (`simple_bnb.py`)](#-baseline-branch--bound-simple_bnbpy)
-- [Βελτιωμένος Branch & Bound (`improved_bnb.py`)](#-βελτιωμένος-branch--bound-improved_bnbpy)
+- [Μοντέλο για Branch & Bound (`model_for_bnb.py`)](#model-bnb)
+- [Baseline Branch & Bound (`simple_bnb.py`)](#simple-bnb)
+- [Βελτιωμένος Branch & Bound (`improved_bnb.py`)](#improved-bnb)
 
 Όλοι οι αλγόριθμοι συνοδεύονται από αναλυτική περιγραφή, απαιτήσεις εκτέλεσης και παραδείγματα χρήσης, επιτρέποντας την πλήρη αναπαραγωγή των πειραμάτων της εργασίας.
 
+<a id="generator"></a>
 ## Γεννήτρια Προβλημάτων (`flpgenerator_BoxNow.py`)
 
 Ο παρών κώδικας αναπτύχθηκε για τη δημιουργία συνθετικών συνόλων δεδομένων (test instances) για το πρόβλημα χωροθέτησης ετερογενών εγκαταστάσεων, με εφαρμογή σε συστήματα θυρίδων παραλαβής δεμάτων (parcel lockers). Η γεννήτρια στοχεύει στην προσομοίωση ρεαλιστικών αστικών συνθηκών, ενσωματώνοντας διαφορετικούς τύπους εγκαταστάσεων, ποικιλία ζήτησης πελατών, περιορισμούς προσβασιμότητας και οικονομικά κριτήρια. Τα παραγόμενα instances μπορούν να χρησιμοποιηθούν για την αξιολόγηση και σύγκριση αλγορίθμων βελτιστοποίησης, όπως μοντέλα Μεικτού Ακέραιου Γραμμικού Προγραμματισμού (MILP) ή custom μεθόδους (π.χ. Branch and Bound).
@@ -289,6 +289,7 @@ python model.py <directory> [--problems problem1.txt problem2.txt ...]
 
 ---
 
+<a id="model-bnb"></a>
 ##  Μοντέλο για Branch & Bound (`model_for_bnb.py`)
 
 Ο παρών κώδικας υλοποιεί ένα **MILP μοντέλο ειδικά σχεδιασμένο για χρήση σε custom αλγορίθμους Branch & Bound**, χρησιμοποιώντας **μονοδιάστατο διάνυσμα μεταβλητών απόφασης** αντί για την κλασική δισδιάστατη αναπαράσταση.
@@ -440,7 +441,7 @@ vtype = GRB.CONTINUOUS
 
 ### Ρόλος στο συνολικό workflow
 Το συνολικό workflow της εργασίας είναι:
-```python
+```text
 flpgenerator_BoxNow.py
         ↓
 παραγωγή .txt instances
@@ -454,6 +455,7 @@ custom Branch and Bound αλγόριθμος
 ```
 ---
 
+<a id="simple-bnb"></a>
 ## Baseline Branch & Bound (`simple_bnb.py`)
 Ο παρών κώδικας υλοποιεί τη βασική έκδοση του αλγορίθμου **Branch and Bound** για την επίλυση του ετερογενούς προβλήματος χωροθέτησης θυρίδων παράδοσης δεμάτων (*parcel lockers*).
 
@@ -684,6 +686,8 @@ Average Time Elapsed: ... seconds
 - τη δυνατότητα εύρεσης εφικτών λύσεων
 
 ---
+
+<a id="improved-bnb"></a>
 ##  Βελτιωμένος Branch & Bound (`improved_bnb.py`)
 
 Ο παρών κώδικας υλοποιεί μια **βελτιωμένη έκδοση του αλγορίθμου Branch and Bound (B&B)** για το ετερογενές πρόβλημα χωροθέτησης θυρίδων παράδοσης δεμάτων (*Heterogeneous Facility Location Problem – HFLP*).
@@ -1026,9 +1030,9 @@ Average Nodes: 376
 
 ---
 ### Συνολικά
-Heuristics → καλή αρχική λύση
-Metaheuristics → καλύτερη λύση
-Improved B&B → συστηματική βελτιστοποίηση
-Metrics → καθοδήγηση branching και pruning
+- Heuristics → καλή αρχική λύση
+- Metaheuristics → καλύτερη λύση
+- Improved B&B → συστηματική βελτιστοποίηση
+- Metrics → καθοδήγηση branching και pruning
 
 ---
