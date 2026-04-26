@@ -20,7 +20,7 @@
 
 ## 📑 Περιεχόμενα
 
-- [Γεννήτρια προβλημάτων (flpgenerator.py)](#γεννήτρια-προβλημάτων-flpgeneratorpy)
+- [Γεννήτρια Προβλημάτων (`flpgenerator_BoxNow.py`)](#-γεννήτρια-προβλημάτων-flpgenerator_boxnowpy)
 - [Μοντέλο Βελτιστοποίησης (model.py)](#-μοντέλο-βελτιστοποίησης-modelpy)
 - [Μοντέλο για Branch & Bound (model_for_bnb.py)](#μοντέλο-για-branch--bound)
 - [Baseline Branch & Bound (simple_bnb.py)](#baseline-branch--bound)
@@ -100,6 +100,13 @@
 ```bash
 5_25_10_5/
 ```
+Ο φάκελος περιέχει αρχεία:
+
+```text
+0.txt, 1.txt, ..., (num_problems - 1).txt
+```
+Κάθε αρχείο .txt αντιστοιχεί σε ένα διαφορετικό instance του προβλήματος.
+
 ---
 
 ## Απαιτήσεις
@@ -352,7 +359,7 @@ run_model(filename)
 δέχεται ως είσοδο ένα αρχείο .txt που έχει παραχθεί από τον generator (flpgenerator_BoxNow.py)
 
 ---
-### 💾 Έξοδος
+### 📤 Έξοδος
 Η συνάρτηση run_model(filename) δεν επιστρέφει μόνο το μοντέλο, αλλά ένα σύνολο δομών που χρησιμοποιούνται από τον Branch and Bound:
 
 ```python
@@ -657,23 +664,7 @@ Average Time Elapsed: ... seconds
 
 ---
 
-### Ρόλος στο συνολικό workflow
-Η συνολική ροή χρήσης είναι:
-```bash
-flpgenerator_BoxNow.py
-        ↓
-παραγωγή .txt instances
-        ↓
-model_for_bnb.py
-        ↓
-δημιουργία LP relaxation σε μονοδιάστατη μορφή
-        ↓
-simple_bnb.py
-        ↓
-εκτέλεση baseline Branch and Bound
-        ↓
-αποθήκευση αποτελεσμάτων σε .txt αρχείο
-```
+
 
 ---
 
@@ -711,7 +702,7 @@ simple_bnb.py
 
 ### 1. Ευρετικοί Αλγόριθμοι (Heuristics)
 Οι ευρετικοί χρησιμοποιούνται για την εύρεση μιας αρχικής εφικτής λύσης (incumbent), η οποία χρησιμοποιείται ως άνω φράγμα (upper bound).
-```bash
+
 | Μέθοδος           | Περιγραφή                                      | Ρόλος                |
 | ----------------- | ---------------------------------------------- | -------------------- |
 | Distance Greedy   | Επιλογή θέσεων βάσει απόστασης                 | Γρήγορη κάλυψη       |
@@ -719,7 +710,7 @@ simple_bnb.py
 | Feasibility-First | Προτεραιότητα στη χωρητικότητα                 | Εγγυημένη εφικτότητα |
 | GRASP Multistart  | Τυχαιοποιημένο greedy με πολλαπλές επαναλήψεις | Διαφορετικές λύσεις  |
 
-```
+
 📌 Οφέλη:
 
 - ταχεία εύρεση λύσης
@@ -727,7 +718,7 @@ simple_bnb.py
 
 ### 2. Μεθευρετικές Μέθοδοι (Metaheuristics)
 Μετά τους heuristics, εφαρμόζονται metaheuristics για βελτίωση της λύσης.
-```bash
+
 | Μέθοδος               | Περιγραφή                             | Πλεονέκτημα             |
 | --------------------- | ------------------------------------- | ----------------------- |
 | VND                   | Διαδοχική αλλαγή neighborhoods        | Ισχυρή τοπική αναζήτηση |
@@ -735,7 +726,7 @@ simple_bnb.py
 | Iterated Local Search | Επαναληπτική τοπική αναζήτηση         | Εξερεύνηση λύσεων       |
 
 
-```
+
 📌 Ρόλος:
 
 - βελτιώνουν το incumbent
@@ -745,14 +736,13 @@ simple_bnb.py
 Χρησιμοποιούνται για branching, pruning και αξιολόγηση.
 
 - Μετρικές πελατών:
-```bash
 | Metric            | Περιγραφή                     |
 | ----------------- | ----------------------------- |
 | Customer Scarcity | Πόσες επιλογές έχει ο πελάτης |
 | Demand            | Ζήτηση πελάτη                 |
-```
+
 - Μετρικές θέσεων
-```bash
+
 | Metric           | Περιγραφή                    |
 | ---------------- | ---------------------------- |
 | Feasible Count   | Πόσοι πελάτες εξυπηρετούνται |
@@ -760,11 +750,10 @@ simple_bnb.py
 | Inverse Distance | Κοντινή ζήτηση               |
 | Site Scarcity    | Σημαντικότητα θέσης          |
 
-```
-- Capacity Pressure
-```bash
+
+- Capacity Pressure:
 pressure = demand - capacity
-```
+
 📌 Χρησιμοποιείται για:
 
 - επιλογή εγκαταστάσεων
@@ -772,7 +761,7 @@ pressure = demand - capacity
 
 ### 4. Intelligent Branching
 Η επιλογή μεταβλητής διακλάδωσης γίνεται με υβριδικό κριτήριο:
-```bash
+
 | Κριτήριο          | Ρόλος                     |
 | ----------------- | ------------------------- |
 | Fractionality     | Πόσο “μη ακέραιη” είναι   |
@@ -780,23 +769,23 @@ pressure = demand - capacity
 | Customer scarcity | Πελάτες με λίγες επιλογές |
 | Site importance   | Σημαντικότητα θέσης       |
 
-```
+
 - Προτεραιότητα μεταβλητών
    - x[i,j] (άνοιγμα εγκαταστάσεων)
    - y[k,i] (αναθέσεις πελατών)
 
 - Φάσεις αναζήτησης
-```bash
+
 | Φάση | Περιγραφή            |
 | ---- | -------------------- |
 | Dive | Γρήγορη εύρεση λύσης |
 | Best | Βελτιστοποίηση       |
 
 
-```
+
 
 ### 5. Βελτιώσεις Branch and Bound
-```bash
+
 | Τεχνική                | Περιγραφή                  |
 | ---------------------- | -------------------------- |
 | DFS Diving             | Γρήγορο εύρεση incumbent   |
@@ -806,7 +795,7 @@ pressure = demand - capacity
 | Deferred Nodes         | Αποθήκευση κόμβων          |
 
 
-```
+
 📌 Οφέλη:
 
 - λιγότεροι κόμβοι
@@ -844,14 +833,13 @@ pressure = demand - capacity
 
 ---
 ### Μετρικές Αξιολόγησης
-```bash
 | Metric        | Περιγραφή                |
 | ------------- | ------------------------ |
 | Time          | Χρόνος εκτέλεσης         |
 | Nodes         | Εξερευνημένοι κόμβοι     |
 | GAP (%)       | Απόσταση από optimal     |
 | Feasible Rate | % επιλυμένων προβλημάτων |
-```
+
 📌 Χρησιμοποιούνται για σύγκριση με:
 
 - simple B&B
@@ -949,10 +937,11 @@ python improved_bnb.py
 
 Μετά την επίλυση όλων του προβλημάτος υπολογίζονται:
 
-- **Average Objective Value**  
-- **Average Time**  
-- **Average Nodes Explored**  
-- **Feasible Problems (%)**  
+- **Average Objective Value**
+- **Average Time**
+- **Average Nodes Explored**
+- **Average GAP (%)**
+- **Feasible Problems (%)**
 - **Infeasible / Aborted Problems (%)**
 
 ---
@@ -962,7 +951,6 @@ python improved_bnb.py
 ```bash
 ========= Problem 0 =========
 Objective Value: 1250.43
-Best Solution Found
 Time Elapsed: 12.53 seconds
 Nodes Explored: 342
 Tree Depth: 18
@@ -1022,7 +1010,7 @@ Average Nodes: 376
 ```
 ---
 ### Περιγραφή Flow
-```bash
+
 | Βήμα                  | Περιγραφή                                             |
 | --------------------- | ----------------------------------------------------- |
 | Φόρτωση instance      | Διαβάζεται το αρχείο προβλήματος `.txt`               |
@@ -1035,7 +1023,7 @@ Average Nodes: 376
 | Intelligent branching | Επιλέγεται “έξυπνα” η μεταβλητή διακλάδωσης           |
 | Pruning               | Κόβονται κόμβοι που δεν μπορούν να βελτιώσουν τη λύση |
 | Αποτελέσματα          | Αποθηκεύονται objective, χρόνος, κόμβοι και gap       |
-```
+
 ---
 ### Συνολικά
 Heuristics → καλή αρχική λύση
