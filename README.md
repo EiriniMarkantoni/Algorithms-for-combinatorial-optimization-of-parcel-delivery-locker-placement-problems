@@ -136,7 +136,7 @@ pip install numpy
 python flpgenerator_BoxNow.py <grid_size> <total_points> <clients> <facilities> <num_problems>
 ```
 
-##  Παράδειγμα εκτέλεσης
+###  Παράδειγμα εκτέλεσης
 
 ```bash
 python flpgenerator_BoxNow.py 5 25 10 5 2
