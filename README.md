@@ -18,6 +18,7 @@
 - Custom υλοποιήσεις αλγορίθμων Branch & Bound (baseline και βελτιωμένη έκδοση)
 
 <img src="Png.png" width="0" height="0">
+
 ## Περιεχόμενα
 - [Γεννήτρια Προβλημάτων (`flpgenerator_BoxNow.py`)](#generator)
 - [Μοντέλο Βελτιστοποίησης (`model.py`)](#model)
